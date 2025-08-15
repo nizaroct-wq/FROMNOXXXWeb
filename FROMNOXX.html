@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROMNOXX - Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><rect fill="rgba(255,255,255,0.03)" width="100" height="100"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: cover;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 204, 0.3);
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 0, 204, 0.3); }
+            to { text-shadow: 0 0 30px rgba(255, 0, 204, 0.6), 0 0 40px rgba(51, 51, 255, 0.6); }
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(105, 201, 208, 0.6);
+        }
+        
+        .social-link i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .tiktok-link {
+            background: linear-gradient(45deg, #000, #333, #69c9d0);
+        }
+        
+        .tiktok-link:hover {
+            box-shadow: 0 8px 20px rgba(105, 201, 208, 0.6);
+        }
+        
+        .whatsapp-link {
+            background: linear-gradient(45deg, #25D366, #128C7E, #075E54);
+        }
+        
+        .whatsapp-link:hover {
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .section {
+            background: rgba(20, 20, 40, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff00cc;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff00cc, #3333ff, transparent);
+            border-radius: 3px;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .member-card {
+            background: linear-gradient(135deg, rgba(50, 50, 80, 0.7), rgba(30, 30, 60, 0.7));
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .member-card::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff, #3333ff, #ff00cc);
+            z-index: -1;
+            border-radius: 16px;
+            animation: borderAnimation 3s linear infinite;
+            background-size: 400%;
+        }
+        
+        @keyframes borderAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 400% 0; }
+        }
+        
+        .member-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #ff00cc, #3333ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .member-role {
+            color: #69c9d0;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .founders-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .founder-card {
+            background: rgba(30, 30, 50, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .founder-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff00cc, #3333ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .founder-info {
+            flex-grow: 1;
+        }
+        
+        .founder-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        
+        .founder-title {
+            color: #69c9d0;
+            font-size: 0.9rem;
+        }
+        
+        .admin-section {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-text {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        
+        .admin-text strong {
+            color: #69c9d0;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .member-category {
+            margin: 40px 0 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.4rem;
+            color: #ffcc00;
+            border-left: 5px solid #ffcc00;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .members-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .founders-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .member-name {
+                font-size: 1.1rem;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .members-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .social-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo floating">FROMNOXX</div>
+            <div class="subtitle">OFFICIAL WEBSITE</div>
+            
+            <div class="header-buttons">
+                <a href="https://www.tiktok.com/@oxtheos._?_t=ZS-8ytXdFW88mr&_r=1" class="social-link tiktok-link" target="_blank">
+                    <i class="fab fa-tiktok"></i> FOLLOW ON TIKTOK
+                </a>
+                <a href="https://wa.me/6281908666238" class="social-link whatsapp-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> CONTACT US
+                </a>
+                <a href="https://chat.whatsapp.com/KfIrIuXtT0mBuoO6i0AGFR?mode=ac_t" class="social-link whatsapp-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> JOIN OUR GROUP
+                </a>
+            </div>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">PENDIRI FROMNOXX</h2>
+            <div class="founders-section">
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-crown"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">AZKA</div>
+                        <div class="founder-title">Pendiri Utama</div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-star"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">PETINGGI NIZAR</div>
+                        <div class="founder-title">Koordinator</div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-star"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">FAREL</div>
+                        <div class="founder-title">Manajer Operasional</div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-star"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">YAN TIRZ</div>
+                        <div class="founder-title">Manajer Kreatif</div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-star"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">LIZZY</div>
+                        <div class="founder-title">Manajer Konten</div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-star"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">OWN BOY NIZAR</div>
+                        <div class="founder-title">Manajer Teknis</div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-icon"><i class="fas fa-star"></i></div>
+                    <div class="founder-info">
+                        <div class="founder-name">OWN LDS KIA</div>
+                        <div class="founder-title">Manajer Komunitas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">ANGGOTA FROMNOXX</h2>
+            
+            <div class="members-grid">
+                <!-- Pendiri yang juga anggota -->
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">AZKA</h3>
+                    <div class="member-role">Pendiri & Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">PETINGGI NIZAR</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">FAREL</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">YAN TIRZ</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">LIZZY</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">OWN BOY NIZAR</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="member-name">OWN LDS KIA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <!-- Anggota tambahan -->
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">BAGAS</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">NIZAR</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">DENAL</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">TERU</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">RAMA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">KIKI</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">FAHRI</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">LIZI</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">CACA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">AIS</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">ICAL</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">JPRAN</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">AAL</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">TALA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">DIMAS</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">YAN</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">PAIK</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">SOQI</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">DPA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">OBYY</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">VINZ</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">FIRMAN</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">KIA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">TIRZ</h3>
+                    <div class="member-role">Member</div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="member-name">AGRA</h3>
+                    <div class="member-role">Member</div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="admin-section">
+            <p class="admin-text">Website ini dibuat oleh <strong>ALL ADMIN FROMNOXX</strong> untuk komunitas dan penggemar</p>
+        </div>
+    </div>
+
+    <script>
+        // Animasi untuk elemen
+        document.addEventListener('DOMContentLoaded', function() {
+            const memberCards = document.querySelectorAll('.member-card');
+            
+            // Animasi untuk kartu anggota dengan delay bertahap
+            memberCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Efek floating untuk logo
+            const logo = document.querySelector('.logo');
+            setInterval(() => {
+                logo.classList.toggle('floating');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
